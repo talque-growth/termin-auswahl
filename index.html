@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Fast geschafft – wähl deinen Termin · talque</title>
+  <meta name="description" content="Nur noch ein Schritt: Wähl jetzt deinen persönlichen Demo-Termin mit dem talque Sales Team." />
+
+  <link rel="preload" href="font/Roobert/Roobert-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="font/Roobert/Roobert-Medium.woff2"  as="font" type="font/woff2" crossorigin />
+
+  <style>
+    @font-face {
+      font-family: 'Roobert';
+      src: url('font/Roobert/Roobert-Regular.woff2') format('woff2'),
+           url('font/Roobert/Roobert-Regular.woff')  format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Roobert';
+      src: url('font/Roobert/Roobert-Medium.woff2') format('woff2'),
+           url('font/Roobert/Roobert-Medium.woff')  format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --brand-purple:    #A644F3;
+      --brand-deep:      #4A2D63;
+      --brand-violet:    #7E37C5;
+      --brand-dark:      #262628;
+      --brand-light-bg:  #FAF6F5;
+      --purple-light:    #AE67E9;
+      --purple-mid:      #9537E7;
+      --white:           #ffffff;
+      --grey:            #5a5959;
+      --fog:             #FAF6F5;
+      --smoke:           #e8e8ec;
+      --charcoal:        #434343;
+      --black:           #000000;
+
+      --grad-base:  #262628;
+      --grad-left:  #61417E;
+      --grad-right: #775A6C;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roobert', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      color: var(--brand-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ──────────────────────────────────────────────
+       HERO
+       ────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--grad-base);
+      color: var(--white);
+      padding: 56px 0 44px;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 25% 35%, rgba(97,65,126,0.85) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 55% at 80% 70%, rgba(166,68,243,0.30) 0%, transparent 60%),
+        radial-gradient(ellipse 90% 70% at 50% 110%, rgba(119,90,108,0.45) 0%, transparent 70%);
+      filter: blur(2px);
+      z-index: -1;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='1'/></svg>");
+      background-size: 200px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .hero-brand {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-brand img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .hero-inner {
+      text-align: center;
+      max-width: 980px;
+      margin: 0 auto;
+      padding-top: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+    .eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--brand-purple);
+      box-shadow: 0 0 16px rgba(166,68,243,0.85);
+    }
+
+    .hero h1 {
+      font-family: 'Roobert', sans-serif;
+      font-weight: 500;
+      font-size: clamp(32px, 4.4vw, 50px);
+      line-height: 1.05;
+      letter-spacing: -1.1px;
+      margin: 0 0 16px;
+      white-space: balance;
+    }
+    .hero h1 .accent {
+      color: var(--purple-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 1.4vw, 17px);
+      line-height: 1.55;
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+    }
+    .step .pill {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.7);
+    }
+    .step.done {
+      color: rgba(255,255,255,0.88);
+    }
+    .step.done .pill {
+      background: var(--brand-purple);
+      border-color: var(--brand-purple);
+      color: var(--white);
+    }
+    .step.active {
+      color: var(--white);
+    }
+    .step.active .pill {
+      background: var(--white);
+      border-color: var(--white);
+      color: var(--brand-deep);
+    }
+    .step .sep {
+      width: 18px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+    }
+
+    .hero-trust {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      backdrop-filter: blur(8px);
+    }
+    .hero-trust .stars { color: #FFC857; letter-spacing: 2px; font-size: 12px; }
+    .hero-trust .sep-dot { width: 3px; height: 3px; border-radius: 999px; background: rgba(255,255,255,0.3); display: inline-block; }
+
+    /* ──────────────────────────────────────────────
+       BOOKING GRID (Kalender + Sidecards)
+       ────────────────────────────────────────────── */
+    .booking-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .sidecards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: sticky;
+      top: 24px;
+    }
+    .sidecards-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey);
+      font-weight: 500;
+      margin: 0 0 4px;
+      padding-left: 4px;
+    }
+    .sidecard {
+      background: var(--white);
+      border: 1px solid var(--smoke);
+      border-radius: 16px;
+      padding: 18px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .sidecard:hover {
+      border-color: rgba(166, 68, 243, 0.25);
+      box-shadow: 0 8px 20px -14px rgba(74, 45, 99, 0.2);
+    }
+    .sidecard-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--brand-purple), var(--brand-violet));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .sidecard-icon svg { width: 17px; height: 17px; }
+    .sidecard h3 {
+      font-family: 'Roobert', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: -0.1px;
+      margin: 0 0 4px;
+      color: var(--brand-dark);
+    }
+    .sidecard p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--grey);
+      margin: 0;
+    }
+
+    .prep {
+      background: var(--white);
+      padding: 48px 0 88px;
+    }
+    .prep-cta {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--fog);
+      border: 1px solid var(--smoke);
+      border-radius: 24px;
+      padding: 28px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .prep-cta-text h3 {
+      font-family: 'Roobert', sans-serif;
+      font-weight: 500;
+      font-size: 17px;
+      letter-spacing: -0.2px;
+      margin: 0 0 4px;
+      color: var(--brand-dark);
+    }
+    .prep-cta-text p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--grey);
+      margin: 0;
+      max-width: 440px;
+    }
+    .prep-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-purple);
+      color: var(--white);
+      font-family: 'Roobert', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: -0.1px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px -10px rgba(166, 68, 243, 0.6);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+    }
+    .prep-cta-btn:hover {
+      background: var(--brand-violet);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px -10px rgba(166, 68, 243, 0.7);
+    }
+    .prep-cta-btn svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.15s ease;
+    }
+    .prep-cta-btn:hover svg { transform: translateX(2px); }
+
+    /* ──────────────────────────────────────────────
+       TEAM
+       ────────────────────────────────────────────── */
+    .team {
+      position: relative;
+      background: var(--white);
+      padding: 72px 0 0;
+    }
+    .team-card {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--smoke);
+      border-radius: 24px;
+      padding: 56px 40px 52px;
+      box-shadow: 0 20px 50px -28px rgba(38, 38, 40, 0.22);
+      text-align: center;
+    }
+    .team-card h2 {
+      font-family: 'Roobert', sans-serif;
+      font-weight: 500;
+      font-size: clamp(22px, 2.4vw, 28px);
+      letter-spacing: -0.4px;
+      margin: 0 0 8px;
+    }
+    .team-card p.lead {
+      color: var(--grey);
+      font-size: 14px;
+      line-height: 1.55;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+
+    .team-row {
+      display: flex;
+      justify-content: center;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+    .person {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      width: 240px;
+    }
+    .person .avatar {
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      object-fit: cover;
+      box-shadow: 0 18px 42px -18px rgba(74, 45, 99, 0.5);
+      border: 5px solid var(--white);
+      outline: 1px solid var(--smoke);
+    }
+    .person .name {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--brand-dark);
+      letter-spacing: -0.2px;
+    }
+
+    /* ──────────────────────────────────────────────
+       CALENDAR — primary focus
+       ────────────────────────────────────────────── */
+    .calendar {
+      background: var(--fog);
+      padding: 32px 0 80px;
+      position: relative;
+    }
+    .calendar-shell {
+      background: var(--white);
+      border: 1px solid var(--smoke);
+      border-radius: 28px;
+      padding: 28px 24px 24px;
+      box-shadow: 0 30px 80px -36px rgba(38, 38, 40, 0.35),
+                  0 12px 30px -18px rgba(74, 45, 99, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+    .calendar-head {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 16px;
+    }
+    .calendar-head h2 {
+      font-family: 'Roobert', sans-serif;
+      font-weight: 500;
+      font-size: clamp(22px, 2.4vw, 28px);
+      letter-spacing: -0.5px;
+      margin: 0 0 6px;
+      color: var(--brand-dark);
+    }
+    .calendar-head p {
+      color: var(--grey);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .meetings-iframe-container {
+      min-height: 700px;
+    }
+    .meetings-iframe-container iframe {
+      border: 0;
+      width: 100%;
+      min-height: 700px;
+      display: block;
+    }
+    .reassure {
+      max-width: 940px;
+      margin: 24px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--grey);
+      text-align: center;
+    }
+    .reassure svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--brand-violet); }
+
+
+    /* ──────────────────────────────────────────────
+       TRUST / FOOTER
+       ────────────────────────────────────────────── */
+    .trust {
+      background: var(--white);
+      padding: 40px 0 32px;
+      text-align: center;
+    }
+    .trust .rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--grey);
+    }
+    .trust .stars { color: #FFB400; letter-spacing: 1px; }
+
+    footer {
+      background: var(--brand-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 28px 0;
+      font-size: 13px;
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    footer .brand {
+      color: var(--white);
+      font-weight: 500;
+      letter-spacing: -0.3px;
+    }
+    footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      margin-left: 18px;
+    }
+    footer a:hover { color: var(--white); }
+
+    /* ──────────────────────────────────────────────
+       RESPONSIVE
+       ────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .booking-grid {
+        grid-template-columns: 1fr;
+        max-width: 840px;
+      }
+      .sidecards { position: static; }
+    }
+    @media (max-width: 880px) {
+      .team-card { padding: 44px 24px 40px; }
+      .team-row { gap: 40px; }
+      .person { width: 200px; }
+      .person .avatar { width: 180px; height: 180px; }
+      .prep-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 24px;
+      }
+      .prep-cta-btn { width: 100%; justify-content: center; padding: 14px 20px; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 40px 0 32px; }
+      .team { padding: 48px 0 8px; }
+      .team-card { padding: 36px 20px 32px; border-radius: 22px; }
+      .team-row { gap: 28px; }
+      .person { width: 160px; }
+      .person .avatar { width: 140px; height: 140px; }
+      .calendar { padding: 20px 0 48px; }
+      .calendar-shell {
+        padding: 24px 16px 20px;
+        border-radius: 22px;
+      }
+      .steps .step .sep { width: 12px; }
+      .prep { padding: 16px 0 48px; }
+      .hero-brand img { height: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <a class="hero-brand" href="https://web.talque.com" aria-label="talque">
+      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzcxLjE3IiBoZWlnaHQ9IjE0Ni43MiIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMzcxLjE3IDE0Ni43MiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjI1IDAgMCAtMS4yNSAtMzIyLjU2IDcxMy45OSkiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2My40NCA1MDUuMTEpIj48cGF0aCBkPSJtMCAwaC01LjM5N2wxLjA0NyA2LjIwM2g1LjM5N2wxLjE2NyA2Ljc3OCA4LjAzMSAyLjk2OS0xLjcwNi05Ljc0N2g5Ljc0OGwtMS4wNDctNi4yMDNoLTkuNzQ4bC0zLjcwNi0yMS4wMjZjLTAuMzIyLTEuNzcyLTAuNDg0LTMuMTQyLTAuNDg0LTQuMjcgMC0yLjgxOSAxLjIxLTMuNjI1IDQuNTEyLTMuNjI1IDIuMTc1IDAgNC44MzQgMC44ODcgNS44IDEuMzdsLTEuMjA4LTcuMDA5Yy0wLjk2Ny0wLjMyMi0zLjc4Ny0wLjk2Ny02Ljg0Ny0wLjk2Ny03LjAwOSAwLTkuOTA5IDMuMTQyLTkuOTA5IDkuMTA0IDAgMS40NSAwLjMyMSAzLjc4NiAwLjcyNSA2LjA0MXoiIGZpbGw9IiNmZmYiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzA0Ljg1IDUwNS40MykiPjxwYXRoIGQ9Im0wIDBjLTguODYxIDAtMTIuNjQ4LTkuOTA5LTEyLjY0OC0xOS41NzYgMC02LjI4NCAyLjAxNS05Ljk5IDcuNDkyLTkuOTkgOS4wMjMgMCAxMi42NDggMTAuMDcgMTIuNjQ4IDE5LjU3NiAwIDYuMjg0LTIuMDE0IDkuOTktNy40OTIgOS45OW0xMC43OTUtMzUuMjA1aC02LjM2NGMtMC4wODEgMC40ODMtMC4xNjEgMS4yMDktMC4xNjEgMi4wMTQgMCAwLjgwNiAwLjE2MSAyLjAxNCAwLjMyMiAzLjE0Mi0yLjA5NC0zLjU0NS02LjYwNi02LjEyMy0xMC43MTUtNi4xMjMtOS42NjYgMC0xNC4yNTkgNi4yODQtMTQuMjU5IDE1Ljk1MiAwIDE0LjUgNy4wMSAyNy4wNjcgMjAuMzgyIDI3LjA2NyA1LjgwMSAwIDguODYyLTMuMTQyIDkuOTktNi42ODcgMC4zMjIgMi41NzggMC43MjQgMy43ODcgMS42OTEgNS43Mmg2LjM2NHoiIGZpbGw9IiNmZmYiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzM3LjY5IDUyNy4yNSkiPjxwYXRoIGQ9Im0wIDAgNy42NDYgMC4wNjItNy43ODEtNDQuMDMxYy0wLjI0Mi0xLjM3LTAuNDAyLTIuNDk4LTAuNDAyLTMuMzg0IDAtMi4yNTYgMC44ODUtMi45OCAzLjIyMi0yLjk4aDEuNjExbC0xLjEyOC02LjY4N2MtMC44MDYtMC4xNjEtMi4wOTQtMC4zMjItMy42MjUtMC4zMjItNC45MTQgMC03LjczNCAyLjMzNi03LjczNCA4LjM3OCAwIDEuNzczIDAuNDAzIDQuMTg5IDAuODA2IDYuNDQ1eiIgZmlsbD0iI2ZmZiIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzOTQuNTggNDc5LjgxKSI+PHBhdGggZD0ibTAgMGMwIDIuMDE0IDAuMjQyIDQuNTEyIDAuODA2IDcuNDkybDQuMTg5IDI0LjAwN2g3LjQ5MmwtMy43MDYtMjEuMzQ4Yy0wLjcyNi0zLjk0Ny0wLjk2Ny01Ljg4MS0wLjk2Ny03LjI1MSAwLTQuMTA4IDEuNTMxLTYuNDQ1IDUuNzItNi40NDUgNi40NDQgMCAxMC44NzUgNC42NzMgMTIuODA4IDE1LjYyOWwzLjM4NCAxOS40MTVoNy40OTJsLTcuMTctNDEuMDg1aC02LjM2NGMtMC4wOCAwLjQ4My0wLjE2MSAxLjA0Ny0wLjE2MSAxLjg1MiAwIDEuNDUxIDAuMjQxIDMuMjIzIDAuNDg0IDQuNTEyLTIuOTgxLTQuNTEyLTcuMjUxLTcuNDExLTEzLjIxMi03LjQxMS02LjQ0NSAwLTEwLjc5NSA0LjAyNy0xMC43OTUgMTAuNjMzIiBmaWxsPSIjZmZmIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ0NS40MSA0ODkuOTcpIj48cGF0aCBkPSJtMCAwYzEuMDQ4IDAuODg2IDIuNTc4IDEuNjExIDQuNTEyIDIuMDk0bDcuMDg5IDEuODUzYzUuMjM2IDEuMzY5IDguMDU1IDMuMTQyIDguMDU1IDcuMDA5IDAgMi45LTIuMTc1IDQuNzUzLTUuODggNC43NTMtNy4wODkgMC0xMi4wMDQtNS44ODEtMTMuNjE1LTE0LjgyM3ptNC44MzQtMy44NjdjLTIuNTc4LTAuNjQ1LTQuMTg5LTEuODUzLTQuMTg5LTQuNDMxIDAtMi4yNTYgMS42MTEtNS44MDEgNy4wODktNS44MDEgNi40NDUgMCAxMC43OTUgMS44NTQgMTUuNjI4IDQuNDMybC0xLjEyOC03LjA5Yy00LjAyNy0yLjI1NS04Ljg2MS0zLjk0Ny0xNS4zMDYtMy45NDctOS42NjcgMC0xNC44MjMgNi43NjctMTQuODIzIDE2LjQzNCAwIDEzLjY5NSA3LjY1NCAyNi41ODUgMjIuNDc3IDI2LjU4NSA4Ljc4IDAgMTIuOTY5LTUuMDc2IDEyLjk2OS0xMC41NTQgMC04LjM3OC01LjYzOC0xMS42MDEtMTQuNjYyLTEzLjY5NXoiIGZpbGw9IiNmZmYiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzY1LjEgNDc2LjE5KSI+PHBhdGggZD0ibTAgMGMtNS4zMTcgMC03LjE3IDQuNzUzLTcuMTcgOS45ODkgMCA5LjY2NyAzLjk0OCAxOS40OTYgMTIuODEgMTkuNDk2IDQuODMzIDAgNy4zMzEtMi4yNTYgNy4zMzEtOC4wNTYgMC0xLjk3MS0wLjE2NC00LjAyNy0wLjQ4OC02LjA1NS0wLjE0OS0yLjExMyAzLjA3OC0yLjQ0NyA2LjkyOCAwLjY2NyAwLjIwMSAwLjE2MyAwLjMzNSAwLjQxIDAuMzY5IDAuNjY2IDAuMzM0IDIuNTU1IDAuNTIyIDQuOTQxIDAuNTIyIDcuMTM4IDAgOC44NjItNS4zMTggMTIuMjQ2LTEzLjg1NyAxMi4yNDYtMTMuNjk1IDAtMjEuMzQ4LTEyLjAwMy0yMS4zNDgtMjYuNTg1IDAtOS4zNDUgNC4yNy0xNi40MzQgMTIuODA5LTE2LjQzNCA1Ljk2MSAwIDguMzc4IDEuOTQxIDExLjM1OSA1LjMyNWwtMy42MjUtMjAuNzc2aDcuNDkxbDYuMDQyIDM0Ljg3NGMwLjA5MyAwLjUyNiAwLjE2NyAxLjEzMyAwLjI0OCAxLjY1NiA1ZS0zIDAuMDMxLTAuMDI5IDAuMDM0LTAuMDM2IDllLTMgLTIuMjU1LTUuMzA3LTExLjE1NC0xNC4xNi0xOS4zODUtMTQuMTYiIGZpbGw9IiNmZmYiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTQ1IDUyNi4wMykiPjxwYXRoIGQ9Im0wIDBjMC0xLjA3Mi0wLjYyOC0yLjA2Mi0xLjU1Ni0yLjU5OGwtMTkuNDg2LTExLjIzNGMtMC45MjgtMC41MzUtMi4wODUtMC41MzUtMy4wMTQgMGwtMTkuNDUgMTEuMjM0Yy0wLjkyOSAwLjUzNi0xLjQ5NCAxLjUyNi0xLjQ5NCAyLjU5OHYyMi40NjdjMCAxLjA3MiAwLjU1OCAyLjA2MiAxLjQ4NyAyLjU5OGwxOS40NSAxMS4yMzRjMC45MjggMC41MzYgMi4wNjggMC41MzYgMi45OTcgMGwxOS41MTEtMTEuMjM0YzAuOTI5LTAuNTM2IDEuNTU1LTEuNTI2IDEuNTU1LTIuNTk4em04LjU1MyAyNC42OTQtMjMuMjcxIDE5LjUyN2MtMS4wOTcgMC45MjEtMi42MDIgMS4xODYtMy45NDggMC42OTZsLTI4LjU0Ni0xMC4zOWMtMS4zNDYtMC40OS0yLjMyOC0xLjY2LTIuNTc3LTMuMDdsLTUuMjc1LTI5LjkxOGMtMC4yNDgtMS40MSAwLjI3NC0yLjg0NiAxLjM3MS0zLjc2NmwxNi43NTItMTQuMDU2YzAuNTQ1LTAuNDU4IDAuODA2LTEuMTcyIDAuNjg1LTEuODczbC0xLjQ5NC04LjYyNiAzOS44MjMgMTQuNzIyYzEuMzQ1IDAuNDkgMi4zMjcgMS42NiAyLjU3NiAzLjA3bDUuMjc1IDI5LjkxOGMwLjI0OSAxLjQxLTAuMjc0IDIuODQ2LTEuMzcxIDMuNzY2IiBmaWxsPSIjZmZmIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUyMS45OCA1NDUuNjEpIj48cGF0aCBkPSJtMCAwYy00LjU5Ni0wLjQwMi03Ljk5NS00LjQ1My03LjU5My05LjA0OXM0LjQ1My03Ljk5NSA5LjA0OS03LjU5MyA3Ljk5NSA0LjQ1MyA3LjU5MyA5LjA0OS00LjQ1MyA3Ljk5NS05LjA0OSA3LjU5MyIgZmlsbD0iI2ZmZiIvPjwvZz48L2c+PC9zdmc+Cg==" alt="talque" />
+    </a>
+    <div class="container hero-inner">
+      <div class="eyebrow"><span class="dot"></span>Nur noch ein Schritt</div>
+      <h1>Fast geschafft – <span class="accent">wähl deinen Termin</span></h1>
+      <p class="hero-sub">
+        30 Minuten, unverbindlich. Wir hören zu, zeigen die Plattform und beantworten deine Fragen.
+      </p>
+
+      <div class="steps" aria-label="Fortschritt">
+        <span class="step done"><span class="pill">✓</span>Formular ausgefüllt</span>
+        <span class="sep"></span>
+        <span class="step active"><span class="pill">2</span>Termin wählen</span>
+        <span class="sep"></span>
+        <span class="step"><span class="pill">3</span>Demo</span>
+      </div>
+
+      <div class="hero-trust">
+        <span class="stars">★★★★★</span>
+        <span>4.6</span>
+        <span class="sep-dot"></span>
+        <span>1.000+ Rezensionen</span>
+        <span class="sep-dot"></span>
+        <span>500.000+ Downloads</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="calendar">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="calendar-shell">
+          <div class="calendar-head">
+            <h2>Such dir deinen Wunschtermin</h2>
+            <p>Meist sind Termine innerhalb von 24–48 Stunden verfügbar. Bestätigung &amp; Kalendereinladung kommen sofort per E-Mail.</p>
+          </div>
+
+          <!-- Start of Meetings Embed Script -->
+          <div class="meetings-iframe-container" data-src="https://meetings-eu1.hubspot.com/meetings/mariusbracke/talque-teamkalender?embed=true"></div>
+          <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+          <!-- End of Meetings Embed Script -->
+        </div>
+
+        <aside class="sidecards" aria-label="Was dich im Call erwartet">
+          <p class="sidecards-label">Was dich im Call erwartet</p>
+
+          <div class="sidecard">
+            <div class="sidecard-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2 L15 8.5 L22 9.3 L17 14 L18.2 21 L12 17.8 L5.8 21 L7 14 L2 9.3 L9 8.5 Z"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Auf dein Event zugeschnitten</h3>
+              <p>Ob Festival, Konferenz oder Messe – wir zeigen genau die Features, die für dein Format relevant sind.</p>
+            </div>
+          </div>
+
+          <div class="sidecard">
+            <div class="sidecard-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Antworten statt Pitch</h3>
+              <p>Du fragst, wir antworten – ehrlich zu Funktionen, Grenzen und ob talque das Richtige für euch ist.</p>
+            </div>
+          </div>
+
+          <div class="sidecard">
+            <div class="sidecard-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Unverbindlich &amp; kostenlos</h3>
+              <p>30 Minuten, klare nächste Schritte. Du entscheidest, wie es weitergeht.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="reassure">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M23 4v6h-6"/>
+          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+        </svg>
+        <span>Termin passt nicht mehr? Per Link in der Bestätigungsmail jederzeit verschieben oder absagen.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="container">
+      <div class="team-card">
+        <h2>Wir freuen uns auf dich</h2>
+        <p class="lead">Eines dieser Gesichter wird im Call dabei sein.</p>
+
+        <div class="team-row">
+          <div class="person">
+            <img class="avatar" src="img/Magdalena Jurgielewicz.avif" alt="Magdalena vom talque Team" />
+            <div class="name">Magdalena</div>
+          </div>
+          <div class="person">
+            <img class="avatar" src="img/Daniel Schäfer.avif" alt="Daniel vom talque Team" />
+            <div class="name">Daniel</div>
+          </div>
+          <div class="person">
+            <img class="avatar" src="img/Corinna Kalkowsky.avif" alt="Corinna vom talque Team" />
+            <div class="name">Corinna</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prep">
+    <div class="container">
+      <div class="prep-cta">
+        <div class="prep-cta-text">
+          <h3>Schon konkrete Infos zu deinem Event?</h3>
+          <p>Gib uns vorab ein paar Details – dann ist deine Demo noch genauer auf dich zugeschnitten.</p>
+        </div>
+        <a class="prep-cta-btn" href="https://dein-beratungsgespr-ch-mit-talque.vercel.app/" target="_blank" rel="noopener">
+          Vorab Infos teilen
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/>
+            <path d="m13 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <div class="brand">© 2026 talque</div>
+      <nav>
+        <a href="https://web.talque.com/impressum">Impressum</a>
+        <a href="https://web.talque.com/agbs">AGB</a>
+        <a href="https://web.talque.com/datenschutz">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
